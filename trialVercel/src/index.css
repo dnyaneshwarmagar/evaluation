@@ -1,0 +1,13 @@
+.redtext {
+    color: red;
+    
+}
+.imgClass{
+    height: 100px;
+    width: 100px;
+}
+#display{
+    color:tomato;
+    font-size: 20vh;
+    border:black solid 1px;
+}
