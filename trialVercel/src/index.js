@@ -1,32 +1,17 @@
-// let sum = require("./calc.js");
-import { sum } from "./calc";
-import "./index.css";
-import phimg from "./decodingVishwa.png";
-console.log("vishwa")
-console.log(sum(0, 18))
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-let root = document.getElementById("root");
-let h1 = document.createElement("h1");
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-let img = document.getElementById("im");
-img.src = phimg;
-img.classList.add("imgClass")
-
-
-h1.innerText = "Input text will appear below";
-h1.setAttribute("class", "redtext");
-
-let btn = document.getElementById("btn");
-btn.addEventListener("click", showtext);
-
-function showtext() {
-    let v = document.getElementById("mytext").value;
-    console.log(v)
-    let div = document.createElement("div");
-    div.textContent = v;
-    div.setAttribute("id", "display")
-    root.append(div);
-    document.getElementById("mytext").value = ""
-
-}
-root.append(h1) 
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
