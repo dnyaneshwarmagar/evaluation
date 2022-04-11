@@ -9,8 +9,16 @@ function App() {
   const [result, setResult] = useState(null);
 
   const increaseOver = () => {
+    var ans;
     if (runs <= 100 && wickets < 12) {
-      setOver(+((over + 0.1).toFixed(1)))
+      setBalls(balls + 1);
+
+      if (balls % 6 === 0) { ans = balls / 6; }
+      else {
+        ans = +((balls % 6) / 10).toFixed(1) + (balls / 6 - (balls / 6) % 1);
+      }
+
+      setOver(ans)
     }
   };
   const increaseRuns = (value) => {
