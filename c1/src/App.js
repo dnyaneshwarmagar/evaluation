@@ -4,21 +4,19 @@ import "./App.css";
 function App() {
   const [runs, setRuns] = useState(76);
   const [wickets, setWickets] = useState(2);
-  const [balls, setBalls] = useState(50);
+  let [balls, setBalls] = useState(50);
   const [over, setOver] = useState(8.2);
   const [result, setResult] = useState(null);
 
   const increaseOver = () => {
     var ans;
+    setBalls(++balls);
     if (runs <= 100 && wickets < 12) {
-      setBalls(balls + 1);
 
-      if (balls % 6 === 0) { ans = balls / 6; }
-      else {
-        ans = +((balls % 6) / 10).toFixed(1) + (balls / 6 - (balls / 6) % 1);
-      }
 
-      setOver(ans)
+      ans = Math.floor(balls / 6) + "." + (balls % 6)
+
+      setOver(+ans)
     }
   };
   const increaseRuns = (value) => {
