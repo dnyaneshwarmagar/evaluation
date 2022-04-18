@@ -118,7 +118,7 @@ export const ShowStudents = () => {
             <td className="age">{el.age}</td>
             <td className="tenth_score">{el.tenth_score}</td>
             <td className="twelth_score">{el.twelth_score}</td>
-            <td className="preferred_branch">{el.v}</td>
+            <td className="preferred_branch">{el.preferred_branch}</td>
           </tr>
           )
           )          

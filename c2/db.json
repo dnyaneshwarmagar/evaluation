@@ -142,6 +142,17 @@
       "twelth_score": "25",
       "preferred_branch": "",
       "id": 13
+    },
+    {
+      "first_name": "kasabe",
+      "last_name": "kas",
+      "email": "ksa@gmail.com",
+      "gender": "male",
+      "age": "23",
+      "tenth_score": "55",
+      "twelth_score": "55",
+      "preferred_branch": "",
+      "id": 14
     }
   ]
 }
