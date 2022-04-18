@@ -1,7 +1,56 @@
 import { useEffect, useState } from "react";
+import "./ShowStudents.css";
 
 export const ShowStudents = () => {
   const [studentData,setStudentData] = useState([]);
+
+  const [sortby,setSortby]=useState(null)
+  const [order,setOrder]=useState("asc")
+  
+  
+  useEffect( ()=>{
+   getData()
+  
+  },[order])
+  
+  const handleChange=(e)=>{
+  
+    const {name,value}=e.target
+  
+    setSortby({...sortby,[name]:value})
+  
+  }
+  
+  const sortbyChange=(e)=>{
+    const [name,value]=e.target
+  
+    setOrder({...order,[name]:value})
+  }
+  
+  
+  
+  const sorting=()=>{
+ 
+    if(order==="asc"){
+    const sorted=[...studentData].sort((a,b)=>
+    (a[sortby].toLowerCase() > b[sortby].toLowerCase() ? 1:-1)  )
+    setStudentData(sorted)
+  }
+  else if(order==="desc")
+  {
+    const sorted=[...studentData].sort((a,b)=>
+    (a[sortby].toLowerCase() < b[sortby].toLowerCase() ? 1:-1) )
+    setStudentData(sorted)
+  }
+  
+  }
+  
+  
+
+
+
+
+
 
   const getData = async () =>{
     const data = await fetch("http://localhost:8080/students").then(d=>d.json());
@@ -11,6 +60,7 @@ export const ShowStudents = () => {
     getData()
   },[])
 
+  if(studentData){
   return (
     <div>
       <div className="controls">
@@ -19,6 +69,8 @@ export const ShowStudents = () => {
           <select
             // select dropdown needs both value and onChange
             className="sortby"
+            name="sortby"
+            onChange={handleChange}
           >
             <option value="first_name">First Name</option>
             <option value="gender">Gender</option>
@@ -32,12 +84,14 @@ export const ShowStudents = () => {
           <select
             // select dropdown needs both value and onChange
             className="sortorder"
+            name="sortorder"
+            onChange={sortbyChange}
           >
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
         </div>
-        <button className="sort">sort</button>
+        <button className="sort" onClick={sorting}>sort</button>
       </div>
       <table className="table">
         <thead>
@@ -73,3 +127,4 @@ export const ShowStudents = () => {
     </div>
   );
 };
+}

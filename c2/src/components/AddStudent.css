@@ -1,0 +1,10 @@
+.addstudent{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid rgb(235, 140, 17);
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 20px;
+    margin-top: 10px;
+}
