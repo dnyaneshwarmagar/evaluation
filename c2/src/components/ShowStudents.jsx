@@ -34,6 +34,7 @@ export const ShowStudents = () => {
     if(order==="asc"){
     const sorted=[...studentData].sort((a,b)=>
     (a[sortby].toLowerCase() > b[sortby].toLowerCase() ? 1:-1)  )
+    console.log(sorted)
     setStudentData(sorted)
   }
   else if(order==="desc")

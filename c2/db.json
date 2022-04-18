@@ -131,6 +131,17 @@
       "twelth_score": "44",
       "preferred_branch": "",
       "id": 12
+    },
+    {
+      "first_name": "br",
+      "last_name": "sv",
+      "email": "vi@gmail.com",
+      "gender": "male",
+      "age": "22",
+      "tenth_score": "44",
+      "twelth_score": "25",
+      "preferred_branch": "",
+      "id": 13
     }
   ]
 }
